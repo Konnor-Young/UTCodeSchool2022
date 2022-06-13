@@ -1,0 +1,68 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Spline Sans Mono', monospace;
+    background: black;
+}
+.heading{
+    padding-bottom: 15px;
+    color: azure;
+}
+h1{
+    font-size: 45px;
+    text-decoration: underline;
+}
+#restart{
+    display: none;
+    background-image: linear-gradient(rgb(255, 0, 0), rgb(255, 255, 0, 0.255), rgb(0, 255, 255, 0.255), rgb(0, 0, 255));
+    color: aliceblue;
+    border-radius: 12px;
+    border: 2px solid #fff;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+#playing{
+    display: block;
+}
+#gameOver{
+    display: none;
+    font-size: 200px;
+    font-weight: bold;
+    padding-top: 100px;
+}
+#turnBoard{
+    font-size: 25px;
+}
+.board{
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+}
+.row{
+    display: flex;
+    width: 600px;
+}
+.tile{
+    width: 200px;
+    height: 200px;
+    border: 2px double azure;
+    text-align: center;
+    font-size: 100px;
+    padding-top: 50px;
+}
+.tile:hover{
+    cursor: pointer;
+}
+.X{
+    background: -webkit-linear-gradient(rgb(0, 0, 255), rgb(0, 255, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.O{
+    background: -webkit-linear-gradient(rgb(255, 0, 0), rgb(255, 255, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,51 @@
+[v-cloak]{
+    display: noneks;
+}
+body{
+    background-color: #444;
+}
+body #app #eight-ball{
+    background-color: black;
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    margin: auto;
+}
+body #app #eight-ball #message-area{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin-top: 175px;
+    margin-left: 175px;
+    background-color: #fff;
+    border-radius: 100%;
+    text-align: center;
+}
+body #app #eight-ball #message-area #message{
+    font-size: 20px;
+    font-family: 'Yusei Magic', sans-serif;
+    margin-top: 50px;
+}
+body #app #question-area{
+    background-color: black;
+    color: #fff;
+    width: fit-content;
+    font-size: 20px;
+    font-family: 'Yusei Magic', sans-serif;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#questionButton, #inputArea{
+    font-size: 20px;
+    font-family: 'Yusei Magic', sans-serif;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#warning{
+    background-color: transparent;
+    font-size: 20px;
+    font-family: 'Yusei Magic', sans-serif;
+    border: none;
+}

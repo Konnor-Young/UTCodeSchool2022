@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300;700&display=swap" rel="stylesheet">
+    <title>TicTacToe</title>
+</head>
+<body>
+    <h1 class="heading">Tic-Tac-Toe</h1>
+    <button id="restart">Play Again?</button>
+    <div id="playing">
+        <div class = "heading" id="turnBoard"></div>
+        <div class="board">
+            <div class="row">
+                <div class="tile row1 col1 diag1"></div>
+                <div class="tile row1 col2"></div>
+                <div class="tile row1 col3 diag2"></div>
+            </div>
+            <div class="row">
+                <div class="tile row2 col1"></div>
+                <div class="tile row2 col2 diag1 diag2"></div>
+                <div class="tile row2 col3"></div>
+            </div>
+            <div class="row">
+                <div class="tile row3 col1 diag2"></div>
+                <div class="tile row3 col2"></div>
+                <div class="tile row3 col3 diag1"></div>
+            </div>
+        </div>
+    </div>
+    <div id="gameOver">Here</div>
+    <script src="app.js"></script>
+</body>
+</html>

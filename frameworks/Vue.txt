@@ -1,0 +1,16 @@
+Vue
+
+v-if="variable"
+    -- if variable is true display element
+v-else 
+    -- display element if variable is false
+v-show="variable"
+    -- same as v-if but v-else doesn't work
+v-on:event="function"
+    -- when event function happens
+v-for="iteratable" (ie: table in tables, i in 10)
+    -- loops through the iteratable running code inside the div
+v-bind:style="{style: change}"
+    -- used to change styling on elements
+v-model="variable"
+    -- binds the input value to variable goes both ways

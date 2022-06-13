@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+#quizBox{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}

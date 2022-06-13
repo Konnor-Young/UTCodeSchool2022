@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>8 Ball</title>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <div id="eight-ball">
+            <div id="message-area">
+                <div id="message">{{ message }}</div>
+            </div>
+            <br><br>
+            <div id="question-area">
+                {{ prompt }} <br>
+                <input id="inputArea" v-model="question" v-on:keydown.enter="askQuestion"> <br>
+                <button id="questionButton" v-show="isValidQuestion()" v-on:click="askQuestion" >Ask Question</button> <br>
+                <div id="warning" v-show="question.length > 0 && !isValidQuestion()">Questions Usually end with a "?"</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
