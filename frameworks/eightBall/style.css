@@ -22,7 +22,7 @@ body #app #eight-ball #message-area{
     text-align: center;
 }
 body #app #eight-ball #message-area #message{
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Yusei Magic', sans-serif;
     margin-top: 50px;
 }
@@ -45,7 +45,7 @@ body #app #question-area{
 }
 #warning{
     background-color: transparent;
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Yusei Magic', sans-serif;
     border: none;
 }

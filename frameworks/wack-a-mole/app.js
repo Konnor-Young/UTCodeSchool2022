@@ -14,9 +14,14 @@ var app = new Vue({
                 this.moleRow = Math.ceil(Math.random()*this.rows);
                 this.moleCol = Math.ceil(Math.random()*this.columns);
                 this.total++;
-                if(this.total >= 10){return;}
+                if(this.total >= 10){
+                    setTimeout(()=>{
+                        this.moleRow = -1;
+                    }, 500);
+                    return;
+                }
                 this.updateMoleRecursive()
-            }, 1000);
+            }, 500);
             
             
         },

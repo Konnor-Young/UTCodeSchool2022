@@ -1,0 +1,69 @@
+[v-cloak] {
+    display: none;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+html, body, main {
+    height: 100%;
+    width: 100%;
+}
+body #app {
+    display: grid;
+    grid-template-columns: 3fr 1fr 7fr;
+    height: 90vh;
+}
+body #app #left-column {
+    grid-area: 1/1/1/2;
+    border: 1px solid black;
+    text-align: center;
+    padding: .5rem;
+}
+body #app #left-column #search-album-area{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: scroll;
+    padding: .25rem;
+}
+body #app #left-column #search-album-area img {
+    width: 33.333%;
+    aspect-ratio: 1 / 1;
+    margin: 0;
+}
+body #app #middle-column{
+    grid-area: 1/2/1/3;
+}
+body #app #right-column{
+    grid-area: 1/3/1/4;
+    border: 1px solid black;
+}  
+body #app #right-column #picked-album-area {
+    width: 95%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: gray;
+} 
+body #app #right-column #picked-album-area .picked-album-slot {
+    border: 1px solid black;
+}
+body #app #right-column #picked-album-area .top10 {
+    width: calc( 100% / 5 );
+    aspect-ratio: 1 / 1;
+    background-color: red;
+}
+body #app #right-column #picked-album-area .top22 {
+    width: calc( 100% / 6 );
+    aspect-ratio: 1 / 1;
+    background-color: green;
+}
+body #app #right-column #picked-album-area .top42 {
+    width: calc( 100% / 10 );
+    aspect-ratio: 1 / 1;
+    background-color: blue;
+}

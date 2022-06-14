@@ -12,14 +12,14 @@
     <div id="app" v-cloak>
         <div id="eight-ball">
             <div id="message-area">
-                <div id="message">{{ message }}</div>
+                <div id="message" v-bind:style="{ color: messageColor }">{{ message }}</div>
             </div>
             <br><br>
-            <div id="question-area">
+            <div v-show="answerReady" id="question-area">
                 {{ prompt }} <br>
                 <input id="inputArea" v-model="question" v-on:keydown.enter="askQuestion"> <br>
                 <button id="questionButton" v-show="isValidQuestion()" v-on:click="askQuestion" >Ask Question</button> <br>
-                <div id="warning" v-show="question.length > 0 && !isValidQuestion()">Questions Usually end with a "?"</div>
+                <div id="warning" v-show="question.length > 0 && !isValidQuestion()">End your question with ?</div>
             </div>
         </div>
     </div>
