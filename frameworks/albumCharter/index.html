@@ -9,7 +9,7 @@
     <div id="app" v-cloak>
         <div id="left-column">
             <h1>Album Charter</h1>
-            <input placeholder="Artist" v-model="artistInput">
+            <input placeholder="Artist" v-model="artistInput" v-on:keydown.enter="searchArtist">
             <button v-on:click="searchArtist">Search Artist</button>
             <div id="search-album-area">
                 <img v-for="album, index in searchAlbumList" v-on:click="addAlbum(index)" v-bind:src="album.strAlbumThumb">
@@ -22,8 +22,19 @@
                     class="picked-album-slot" 
                     v-bind:class="{'top10' : index < 10, 
                     'top22' : index >= 10 && index < 22, 
-                    'top42' : index >= 22 && index < 42}" ></div>
+                    'top42' : index >= 22 && index < 42}" 
+                    @mouseup="dropAlbum(index)">
+                        <img class="picked-album" 
+                        draggable="false"
+                        v-if="index < pickedAlbumList.length" 
+                        :src="pickedAlbumList[index].strAlbumThumb"
+                        @mousedown="pickUpAlbum(index)"
+                        v-on:click.ctrl="removeAlbum(index)">
+                </div>
             </div>
+            <ol>
+                <li v-for="album, index in pickedAlbumList">{{ album.strAlbum }} -- {{ album.strArtist }}</li>
+            </ol>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Maze</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- buttons to start and finish the Maze (IDs: start-button, finish-button) -->
+        <!--    - hide buttons when they shouldn't be seen (hide start button after you've started, etc.) -->
+        <button id="start-button" v-show="!started && !lose && !won" @click="startMaze">Start Maze</button>
+        <button id="finish-button" v-show="started && !lose && !won" @click="finishMaze">Finish Maze</button>
+        <!-- wall divs (CLASS: wall)-->
+        <!--    - display at appropriate times -->
+        <!--    - bind the style to the style objects given from the API -->
+        <!--    - player lose when their mouse touches the wall -->
+        <div v-for="wall, index in walls" class="wall" v-show="started && !lose" :style="wall.style" @mouseover="lose=true"></div>
+
+        <!-- win message, lose message, and button for restarting the maze (IDs: win-message, lose-message, restart-button)-->
+        <div id="win-message" v-show="won">You Win!</div>
+        <div id="lose-message" v-show="lose">You Lose.</div>
+        <button id="restart-button" v-show="won || lose" @click="restartMaze">Restart Maze</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
