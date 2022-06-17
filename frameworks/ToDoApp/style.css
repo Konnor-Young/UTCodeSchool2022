@@ -59,7 +59,7 @@ body #app #input-area {
     padding: 1rem;
 }
 
-body #app #input-area .tag-area {
+body #app .tag-area {
     display: inline;
 }
 

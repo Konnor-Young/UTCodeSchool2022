@@ -19,28 +19,34 @@
             Done?: <input type="checkbox" v-model="doneCheck"> <br>
             Deadline: <input placeholder="Date" v-model="dateValue" type="date"> <br> <br>
             Tags: <br>
-            <div v-for="tag in tagNames">{{ tag }}: <input type="checkbox" v-model="tagsValue[tag]"></div>
+            <div class="tag-area" v-for="tag in tagNames">&nbsp;&nbsp;{{ tag }}: <input type="checkbox" v-model="tagsValue[tag]"></div><br>
             <button @click="addToDo">Add to List</button>
         </div>
         <div id="list-area">
             <div class="todo" v-for="todo, index in todos" :class="{ 'newtodo' : todo._id == newToDoId }">
                 Name: <span class="todo-name" :class="{ strikethrough : todo.done }" v-if="editingTodo != index">{{ todo.name }}</span>
-                <input class="todo-name" placeholder="Name" v-model="todo.name" v-if="editingTodo == index">
+                <input class="todo-name" placeholder="Name" v-model="tempToDo.name" v-if="editingTodo == index">
                 <br>
                 Description: <span v-if="editingTodo != index">{{ todo.description }}</span>
-                <input placeholder="Description" v-model="todo.description" v-if="editingTodo == index">
+                <input placeholder="Description" v-model="tempToDo.description" v-if="editingTodo == index">
                 <br>
                 Done?: <span v-if="editingTodo != index">{{ todo.done }}</span>
-                <input placeholder="Done?" v-model="todo.done" type="checkbox" v-if="editingTodo == index">
+                <input placeholder="Done?" v-model="tempToDo.done" type="checkbox" v-if="editingTodo == index">
                 <br>
                 Deadline: <span v-if="editingTodo != index">{{ todo.deadline }}</span>
-                <input placeholder="Deadline" v-model="todo.deadline" type="date" v-if="editingTodo == index">
+                <input placeholder="Deadline" v-model="tempToDo.deadline" type="date" v-if="editingTodo == index">
                 <br>
                 Tags: <span v-if="editingTodo != index">{{ todo.tags }}</span> 
-                <!-- <div v-for="tag in tagNames">{{ tag }}: <input type="checkbox" v-model="todo.tags" v-if="editingTodo == index"></div> -->
+                <div v-if="editingTodo == index">
+                    <div class="tag-area" v-for="tag, index in tagNames">&nbsp;&nbsp;{{ tag }}:
+                        <input type="checkbox" v-model="tempTags[index]">
+                    </div>
+                </div>
                 <br>
-                <button @click="editToDo(index)" v-if="editingTodo != index">Edit To Do</button>
-                <!-- <button @click="putTodo(todo._id)" v-if="editingTodo == index">Save</button> -->
+                <button @click="editToDo(todo, index)" v-if="editingTodo != index">Edit To Do</button>
+                <button @click="deleteToDo(todo._id)" v-if="editingTodo != index">Delete To Do</button>
+                <button @click="putToDo(todo._id)" v-if="editingTodo == index">Save</button>
+                <button @click="cancelEdit()" v-if="editingTodo == index">Cancel</button>
             </div>
         </div>
     </div>
