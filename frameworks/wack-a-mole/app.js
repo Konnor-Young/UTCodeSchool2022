@@ -1,8 +1,8 @@
 var app = new Vue({
     el: "#app",
     data: {
-        rows: 5,
-        columns: 5,
+        rows: 10,
+        columns: 10,
         moleRow: -1,
         moleCol: 0,
         score: 0,
@@ -17,11 +17,11 @@ var app = new Vue({
                 if(this.total >= 10){
                     setTimeout(()=>{
                         this.moleRow = -1;
-                    }, 1500);
+                    }, 500);
                     return;
                 }
                 this.updateMoleRecursive()
-            }, 1500);
+            }, 500);
             
             
         },

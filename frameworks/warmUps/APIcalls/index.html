@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pulling API Data</title>
+</head>
+<body>
+    <div id="app">
+        <div id="shop" v-for="item in list">
+            <img v-bind:src="item.image" style="max-height: 100px">
+            <h1>{{ item.title }}</h1> <br>
+            {{ item.description }}<br>
+            <h2>${{ item.price }}</h2>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- 
+    
+=== Instructions ===
+1. Get the Vue <script> tag hooked up
+    (Can be found on v2.vuejs.org under 'Get Started')
+2. Fetch the API resource 'products' (GET request on https://fakestoreapi.com/products)
+    2.1 Use Postman or console.log() to see what the data looks like
+3. Use a v-for to display each item in the list
+    3.1 Display the following: image, title, description and price
